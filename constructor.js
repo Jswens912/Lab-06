@@ -2,7 +2,7 @@
 
 
 var hours = ['6am', '7am', '8am', '9am','10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
+var allStores = [];
 function CookieStore(location, minCust, maxCust, avgCookie){
     this.location = location,
     this.minCust = minCust,
@@ -11,6 +11,8 @@ function CookieStore(location, minCust, maxCust, avgCookie){
     
     this.cookiesSold = [],
     this.cookiePerHour();
+
+    allStores.push(this);
 }
 
 
@@ -43,7 +45,7 @@ function headerData() {
         td.textContent = "Daily Totals.";
         thead.appendChild(td);
     };
-    
+
 
 function footerData() {
     var tFooter = document.getElementById("table_footer");
@@ -87,6 +89,32 @@ CookieStore.prototype.render = function (){
       tr.appendChild(totalDailyCookie);
     };     
 
+CookieStore.renderAll= function() {
+    var tbody = document.getElementById("tableData");
+    console.log('not working');
+    tbody.innerHTML = '';
+    for(var i=0; i < allStores.length; i++){
+        CookieStore.allStores[i].render().runAllStores();
+
+    }
+    footerData();
+}
+
+
+
+function newStore(event) {
+    event.preventDefault();
+    var newName = event.target(store_name).value;
+    var newMin = document.getElementById(min_cust).value;
+    var newMax = document.getElementById(max_cust).value;
+    var newAvg = document.getElementById(avg_cookies).value;
+      
+    var formStore = new CookieStore(newName, newMin, newMax, newAvg);
+    
+    CookieStore.renderAll();
+    
+}
+
 
 
 var firstAndPike = new CookieStore("First and Pike",23,65,6.3,);
@@ -95,6 +123,7 @@ var seattleCenter = new CookieStore("Seattle Center",11,38,3.7);
 var capitolHill = new CookieStore("Capitol Hill",20,38,2.3);
 var alki =  new CookieStore("Alki",2,16,4.6);
 
+function runAllStores() {
 headerData();
 firstAndPike.render();
 seaTac.render();
@@ -102,3 +131,8 @@ seattleCenter.render();
 capitolHill.render();
 alki.render();
 footerData();
+}
+runAllStores();
+
+var storeForm = document.querySelector('form');
+storeForm.addEventListener('submit', newStore);
