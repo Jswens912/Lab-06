@@ -69,6 +69,7 @@ function footerData() {
 }
 
 
+
 CookieStore.prototype.render = function (){
     var cookieTotal = 0;
     var tbody = document.getElementById("tableData");
@@ -105,6 +106,7 @@ CookieStore.renderAll= function() {
 }
 
 
+
 function newStore(event) {
     event.preventDefault();
     
@@ -118,6 +120,12 @@ function newStore(event) {
     
     formStore.render();
     footerData();
+
+    
+    
+    
+}
+ 
 
 
 var firstAndPike = new CookieStore("First and Pike",23,65,6.3,);
