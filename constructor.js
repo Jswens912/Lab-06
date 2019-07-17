@@ -50,6 +50,7 @@ function headerData() {
 
 function footerData() {
     var tFooter = document.getElementById("table_footer");
+    tFooter.innerHTML='';
     var tf = document.createElement("th");
     tf.textContent = "Hourly Totals";
     var sum = 0;
@@ -66,7 +67,6 @@ function footerData() {
     tf.textContent = sum;
     tFooter.appendChild(tf);
 }
-
 
 
 CookieStore.prototype.render = function (){
@@ -105,23 +105,19 @@ CookieStore.renderAll= function() {
 }
 
 
-
 function newStore(event) {
     event.preventDefault();
-    tFooter.innerHTML=  '';
+    
+    
     var newName = event.target.store_name.value;
-    console.log(newName);
     var newMin = parseInt(event.target.min_cust.value);
     var newMax = parseInt(event.target.max_cust.value);
     var newAvg = parseInt(event.target.avg_cookies.value);
       
     var formStore = new CookieStore(newName, newMin, newMax, newAvg);
-    console.log(newStore);
-    CookieStore.renderAll();
     
-    
-}
- console.log(newStore);
+    formStore.render();
+    footerData();
 
 
 var firstAndPike = new CookieStore("First and Pike",23,65,6.3,);
