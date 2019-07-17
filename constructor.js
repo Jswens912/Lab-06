@@ -69,7 +69,6 @@ function footerData() {
 }
 
 
-
 CookieStore.prototype.render = function (){
     var cookieTotal = 0;
     var tbody = document.getElementById("tableData");
