@@ -48,7 +48,7 @@ function headerData() {
     };
 
 
-function footerData(tFooter) {
+function footerData() {
     var tFooter = document.getElementById("table_footer");
     var tf = document.createElement("th");
     tf.textContent = "Hourly Totals";
