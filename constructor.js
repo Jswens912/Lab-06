@@ -36,6 +36,7 @@ function headerData() {
     var td = document.createElement("th");
     td.textContent = "Stores";
     thead.appendChild(td);
+    
     for(var thIndex = 0; thIndex < hours.length; thIndex++){
         var td = document.createElement("th");
         td.textContent = hours[thIndex];
@@ -47,18 +48,20 @@ function headerData() {
     };
 
 
-function footerData() {
+function footerData(tFooter) {
     var tFooter = document.getElementById("table_footer");
     var tf = document.createElement("th");
     tf.textContent = "Hourly Totals";
     var sum = 0;
     tFooter.appendChild(tf);
+    
     for(var i=0; i < hours.length; i++){
         var tf = document.createElement("th");
         tf.textContent = CookieStore.totalData[i];
         sum += CookieStore.totalData[i];
         tFooter.appendChild(tf);
     }  
+
     tf = document.createElement("th");
     tf.textContent = sum;
     tFooter.appendChild(tf);
@@ -93,28 +96,32 @@ CookieStore.renderAll= function() {
     var tbody = document.getElementById("tableData");
     console.log('not working');
     tbody.innerHTML = '';
+    // tooter.innerHTML = '';
+    // thead.innerHTML = '';
     for(var i=0; i < allStores.length; i++){
-        CookieStore.allStores[i].render().runAllStores();
+        allStores[i].render();
 
     }
-    footerData();
 }
 
 
 
 function newStore(event) {
     event.preventDefault();
-    var newName = event.target(store_name).value;
-    var newMin = document.getElementById(min_cust).value;
-    var newMax = document.getElementById(max_cust).value;
-    var newAvg = document.getElementById(avg_cookies).value;
+    tFooter.innerHTML=  '';
+    var newName = event.target.store_name.value;
+    console.log(newName);
+    var newMin = parseInt(event.target.min_cust.value);
+    var newMax = parseInt(event.target.max_cust.value);
+    var newAvg = parseInt(event.target.avg_cookies.value);
       
     var formStore = new CookieStore(newName, newMin, newMax, newAvg);
-    
+    console.log(newStore);
     CookieStore.renderAll();
     
+    
 }
-
+ console.log(newStore);
 
 
 var firstAndPike = new CookieStore("First and Pike",23,65,6.3,);
@@ -125,11 +132,7 @@ var alki =  new CookieStore("Alki",2,16,4.6);
 
 function runAllStores() {
 headerData();
-firstAndPike.render();
-seaTac.render();
-seattleCenter.render();
-capitolHill.render();
-alki.render();
+CookieStore.renderAll();
 footerData();
 }
 runAllStores();
