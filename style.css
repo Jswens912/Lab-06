@@ -12,7 +12,7 @@ header {
     font-family: 'Barriecito', cursive;
     font-weight: bold;
     width: 100%;
-    
+   
 }
 th{
     text-align: left;
@@ -115,4 +115,18 @@ hr{
 #phrase{
     font-family: 'Literata', serif;
     font-weight: bold;  
+}
+#merch{
+    float: left;
+    display: block;
+    width: 400px;
+    height: 400px;
+    padding-left: 30px;
+    
+}
+#merchtext{
+    float: right;
+    display: block;
+    width: 50%;
+    height: 400px;
 }
