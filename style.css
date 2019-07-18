@@ -1,7 +1,7 @@
 body{
     background-color: darkgrey
 }
-
+/* https://coolors.co/a9cef4-36494e-000000-7ea0b7-597081 */
 header {
     font-size: 64px;
     text-align: center;
@@ -11,6 +11,9 @@ th{
     text-align: left;
     background-color: #A9CEF4;
     font-size: 20pt;
+}
+th:first-child{
+    border-right: 2px solid;
 }
 tfoot{
     text-align: left;
@@ -27,6 +30,7 @@ table, th, td{
 }
 td{
     padding: 10px;
+    font-size: 14pt;
 }
 td:last-child,th:last-child{
 border-left: 2px solid;
@@ -36,12 +40,13 @@ table{
     width: 700px;
 }
 tr:hover{
-    background-color: lightslategray;
+    background-color: #36494E;
 }
 td:first-child{
     background-color: #A9CEF4;
     font-weight: bold;
+    border-right: 2px solid;
 }
 tr:nth-child(even){
-    background-color: #36494E;
+    background-color: #597081;
 }
