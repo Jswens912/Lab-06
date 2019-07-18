@@ -127,9 +127,9 @@ var capitolHill = new CookieStore("Capitol Hill",20,38,2.3);
 var alki =  new CookieStore("Alki",2,16,4.6);
 
 function runAllStores() {
-headerData();
-CookieStore.renderAll();
-footerData();
+    headerData();
+    CookieStore.renderAll();
+    footerData();
 }
 runAllStores();
 
