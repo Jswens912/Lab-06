@@ -30,7 +30,6 @@ CookieStore.prototype.cookiePerHour = function(){
 };
 
 
-
 function headerData() {
     var thead = document.getElementById("table_head");
     var td = document.createElement("th");
@@ -118,6 +117,7 @@ function newStore(event) {
     
     formStore.render();
     footerData();
+}
 
 
 var firstAndPike = new CookieStore("First and Pike",23,65,6.3,);
