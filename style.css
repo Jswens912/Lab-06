@@ -1,4 +1,5 @@
 body{
+    margin: 0px;
     background-color: darkgrey
 }
 /* https://coolors.co/a9cef4-36494e-000000-7ea0b7-597081 */
@@ -6,11 +7,18 @@ header {
     font-size: 64px;
     text-align: center;
     background-color: #7EA0B7;
+    margin-bottom: 30px;
+    display: block;
+    font-family: 'Barriecito', cursive;
+    font-weight: bold;
+    width: 100%;
+   
 }
 th{
     text-align: left;
     background-color: #A9CEF4;
     font-size: 20pt;
+    border-top: 2px solid;
 }
 th:first-child{
     border-right: 2px solid;
@@ -31,13 +39,17 @@ table, th, td{
 td{
     padding: 10px;
     font-size: 14pt;
+
 }
 td:last-child,th:last-child{
 border-left: 2px solid;
+border-right: 2px solid;
 }
+
+
 table{
-    align-content: center;
-    width: 700px;
+ margin: 0px auto;
+ border: 2px solid;
 }
 tr:hover{
     background-color: #36494E;
@@ -49,4 +61,72 @@ td:first-child{
 }
 tr:nth-child(even){
     background-color: #597081;
+}
+#navbar{
+    font-size: 14pt;
+    float: right;
+    margin-right: 15px;
+}
+#hdrsalmon{
+    height:15%;
+    width: 15%;
+}
+#cookie{
+    align-content: center;
+    margin-left: 40%
+}
+h1{
+    text-align: center;
+}
+#family{
+    height: 30%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    
+}
+p{
+    font-family: 'Literata', serif;
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 30px;
+
+    
+}
+a{
+    color: black;
+}
+#fish{
+    height: 30%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 12px;
+}
+#phrase{
+    font-family: 'Literata', serif;
+    font-weight: bold;  
+}
+#merch{
+    float: left;
+    display: block;
+    width: 400px;
+    height: 400px;
+    padding-left: 30px;
+    
+}
+#merchtext{
+    float: right;
+    display: block;
+    width: 50%;
+    height: 400px;
 }
